@@ -1,5 +1,5 @@
 import express, { Express } from "express";
-import userRouter from "./Endpoints/Routes/Users";
+import userRouter from "./Endpoints/Routes/User";
 import cors from "cors";
 
 const app: Express = express();
@@ -16,6 +16,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use(userRouter);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
